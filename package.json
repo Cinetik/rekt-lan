@@ -1,0 +1,22 @@
+{
+  "name": "Rekt your LAN",
+  "description": "The soon-to-be LAN Party best organizer !",
+  "version": "0.0.0",
+  "homepage": "http://www.github.com/cinetik/yolo-octo-dangerzone",
+  "readme": "README.md",
+  "author": {
+    "name": "Cinetik"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/cinetik/yolo-octo-dangerzone.git"
+  }
+  "bugs": {
+      "url": "https://www.github.com/cinetik/yolo-octo-dangerzone/issues",
+      "email": "florian.meskens@gmail.com"
+  }
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "grunt": "^0.4.5",
+  },
+}
