@@ -4,12 +4,16 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        serve: {
-            options: {
-                port: 9000
-            }
+      connect: {
+        server: {
+          options: {
+            hostname: 'localhost',
+            port: 8080,
+            keepalive: true
+          }
         }
+      }
     });
 
-    grunt.loadNpmTasks('grunt-serve');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 };

@@ -12,6 +12,7 @@
   "devDependencies": {
     "bower": "latest",
     "grunt": "latest",
+    "grunt-contrib-connect": "^0.10.1",
     "grunt-serve": "^0.1.6"
   }
 }
