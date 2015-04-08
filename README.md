@@ -1,4 +1,4 @@
-# LAN Organizer (Temporary name)
+# Rekt your LAN (Temporary name)
 
 Repository for the soon-to-be LAN Party best organizer !
 
