@@ -1,22 +1,16 @@
 {
-    "name": "Rekt your LAN",
+    "name": "RektLAN",
     "description": "The soon-to-be LAN Party best organizer !",
     "version": "0.0.0",
-    "homepage": "http://www.github.com/cinetik/rekt-your-lan",
-    "readme": "README.md",
     "author": {
         "name": "Cinetik"
     },
     "repository": {
         "type": "git",
-        "url": "https://www.github.com/cinetik/rekt-your-lan.git"
-    },
-    "bugs": {
-        "url": "https://www.github.com/cinetik/rekt-your-lan/issues",
-        "email": "florian.meskens@gmail.com"
+        "url": "https://github.com/cinetik/rekt-your-lan"
     },
     "devDependencies": {
         "bower": "^1.3.12",
-        "grunt": "^0.4.5",
-    },
+        "grunt": "^0.4.5"
+    }
 }
