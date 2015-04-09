@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('rektlan')
+        .module('rektlan',[])
         .controller('GameController', GameController);
 
     GameController.$inject = [];
