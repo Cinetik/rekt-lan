@@ -8,10 +8,12 @@
     Service.$inject = [''];
 
     function GameService() {
-        this.function = function;
+        var gameService =  {
+            getGames: getGames,
+        };
 
-        function function() {
-
+        function getGames() {
+            return false;
         }
     }
 })();
