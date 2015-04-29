@@ -1,14 +1,19 @@
 (function() {
     'use strict';
-
+    
     angular
-        .module('rektlan')
-        .config(config);
-
-    function config($routeProvider){
-      $routeProvider
-      .when('/',{
-        templateUrl: 'app/test.html'
-      });
+    .module('rektlan')
+    .config(config);
+    
+    config.$inject = ['$stateProvider','$urlRouterProvider'];
+    
+    
+    function config($stateProvider, $urlRouteProvider){
+        $urlRouteProvider.otherwise('/');
+        
+        $stateProvider.state('home',{
+            url: '/',
+            templateUrl: 'app/test.html'
+        });
     }
 })();

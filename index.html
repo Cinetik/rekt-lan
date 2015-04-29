@@ -35,7 +35,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="#/">Home</a></li>
             <li><a href="#/game">games</a></li>
             <li><a href="#/player">Players</a></li>
             <li><a href="#/staff">Staff</a></li>
@@ -45,9 +45,7 @@
       </div>
     </nav>
 
-    <div class="container" ng-view>
-
-
+    <div class="container" ui-view>
     </div><!-- /.container -->
 
     <!-- Main App JS -->
@@ -63,7 +61,17 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
+
+    <!-- App module -->
     <script src="app/app.js"></script>
+    <script src="app/app.route.js"></script>
+    
+    <!-- Game module -->
+    <script src="app/game/game.module.js"></script>
+    <script src="app/game/game.route.js"></script>
+    <script src="app/game/game.controller.js"></script>
+    
   </body>
 </html>

@@ -2,18 +2,16 @@
     'use strict';
 
     angular
-        .module('rektlan')
+        .module('rektlan.game', ['ui.router'])
         .config(config);
 
-    config.$inject = ['$routeProvider'];
+    config.$inject = ['$stateProvider','$urlRouterProvider'];
 
-    function config($routeProvider) {
-        $routeProvider
-            .when('#/game', {
-                templateUrl: 'games.html',
-                controller: 'GameController',
-                controllerAs: 'vm',
-
-            });
-    }
+    function config($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('games', {
+              url: "/game",
+              templateUrl: "app/game/games.html"
+          });
+      }
 })();
