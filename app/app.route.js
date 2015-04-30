@@ -13,7 +13,6 @@
         
         $stateProvider.state('home',{
             url: '/',
-            templateUrl: 'app/test.html'
         });
     }
 })();
