@@ -13,5 +13,11 @@
     "bower": "latest",
     "grunt": "latest",
     "grunt-contrib-connect": "^0.10.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "express": "^4.12.3",
+    "method-override": "^2.3.3",
+    "mongoose": "^4.0.2"
   }
 }
