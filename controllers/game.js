@@ -8,22 +8,37 @@ module.exports = function(app) {
     // authentication routes
 
     // sample api route
-    app.route('/api/game')
-    .get( function(req, res) {
+    app.get('/api/game', function(req, res) {
         Game.find(function(err, games) {
             if (err)
             res.send(err);
             res.json(games);
         });
     })
-    .post( function (req, res) {
+    .get('/api/game/:id', function(req, res) {
+        Game.findById(req.params.id, function(err, game) {
+            if (err)
+            res.send(err);
+            res.json(game);
+        });
+    })
+    .post('/api/game', function (req, res) {
         var game = new Game(req.body);
         game.save(function(err){
             if(err)
-                res.send(err);
+            res.send(err);
             res.json(game);
         });
+    })
+    .delete('/api/game/:id',function (req, res){
+        console.log(req);
+        var game = Game.findOneAndRemove(req.params.id, function(err){
+            if(err)
+            res.send(err);
+            res.json(req.params.id);
+        });
     });
+
 
     // route to handle creating goes here (app.post)
     // route to handle delete goes here (app.delete)

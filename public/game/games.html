@@ -1,4 +1,9 @@
-<li ng-repeat="game in vm.games">{{game.name}}</li>
+<ul>
+    <li ng-repeat="game in vm.games">
+    {{game.name}}
+    <button value="delete" ng-click="vm.deleteGame(game)">Delete</button>
+    </li>
+</ul>
 <form ng-submit="vm.addGame()">
     <input type="text" name="name" ng-model="vm.game.name"/>
     <input type="submit"/>

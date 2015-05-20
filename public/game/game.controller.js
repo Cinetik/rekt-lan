@@ -13,6 +13,7 @@
         vm.errorMessage = {};
         vm.games = [];
         vm.addGame = addGame;
+        vm.deleteGame = deleteGame;
         activate();
 
         function activate() {
@@ -32,6 +33,19 @@
             return gameService.addGame(vm.game).then(function(result){
                 vm.games.push(vm.game);
                 vm.game = {};
+            });
+        }
+        /* TODO Fix the delete
+        * It doesn't delete the good entry in the database.... (#WTF)
+        */
+        function deleteGame(game){
+            var toDelete = game;
+            return gameService.deleteGame(game).then(function(result){
+                console.log(game);
+                console.log(toDelete);
+                console.log(vm.games.indexOf(toDelete));
+                vm.games.splice(vm.games.indexOf(toDelete),1);
+                return result;
             });
         }
     }

@@ -11,6 +11,7 @@
         var service =  {
             getGames: getGames,
             addGame: addGame,
+            deleteGame: deleteGame
         };
         /* TODO Create a mock service that allows CRUD for games.
         *	This will give us the possibility to add games with description, rules and other informations.
@@ -30,6 +31,16 @@
 
         function addGame(game){
             return $http.post('/api/game', game)
+            .then(function(response){
+                return response;
+            })
+            .catch(function(error){
+                return error;
+            });
+        }
+
+        function deleteGame(game){
+            return $http.delete('/api/game/' + game._id)
             .then(function(response){
                 return response;
             })
