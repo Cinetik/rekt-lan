@@ -9,8 +9,10 @@
 
     function GameController(gameService) {
         var vm = this;
+        vm.game = {};
+        vm.errorMessage = {};
         vm.games = [];
-
+        vm.addGame = addGame;
         activate();
 
         function activate() {
@@ -24,6 +26,13 @@
             vm.games = data;
             return vm.games;
           });
+        }
+
+        function addGame(){
+            return gameService.addGame(vm.game).then(function(result){
+                vm.games.push(vm.game);
+                vm.game = {};
+            });
         }
     }
 })();

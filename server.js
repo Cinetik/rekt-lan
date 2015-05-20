@@ -38,7 +38,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 // routes ==================================================
-require('./routes')(app); // configure our routes
+require('./controllers/index')(app); // configure our routes
 
 // start app ===============================================
 // startup our app at http://localhost:8080

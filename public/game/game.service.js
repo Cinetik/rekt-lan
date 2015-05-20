@@ -8,8 +8,9 @@
     gameService.$inject = ['$http'];
 
     function gameService($http) {
-        var gameService =  {
+        var service =  {
             getGames: getGames,
+            addGame: addGame,
         };
         /* TODO Create a mock service that allows CRUD for games.
         *	This will give us the possibility to add games with description, rules and other informations.
@@ -27,6 +28,16 @@
               });
         }
 
-        return gameService;
+        function addGame(game){
+            return $http.post('/api/game', game)
+            .then(function(response){
+                return response;
+            })
+            .catch(function(error){
+                return error;
+            });
+        }
+
+        return service;
     }
 })();

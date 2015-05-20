@@ -1,1 +1,5 @@
 <li ng-repeat="game in vm.games">{{game.name}}</li>
+<form ng-submit="vm.addGame()">
+    <input type="text" name="name" ng-model="vm.game.name"/>
+    <input type="submit"/>
+</form>
