@@ -23,6 +23,16 @@ bower install // Install every bower dependencies
 
 Be sure mongod process is running on your environment.
 
+## Run
+
+At the moment there's no grunt task or anything automated.
+To start the app, just run:
+
+```
+node server.js
+```
+
+
 ## Contribute
 
 If you wish to contribute, feel free to clone this repo.
