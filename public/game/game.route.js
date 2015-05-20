@@ -10,8 +10,9 @@
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('games', {
-              url: "/game",
-              templateUrl: "game/games.html"
+              url: '/game',
+              templateUrl: 'game/games.html',
+              controller: 'GameController as vm',
           });
       }
 })();

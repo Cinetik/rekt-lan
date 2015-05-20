@@ -3,28 +3,26 @@
 // grab the nerd model we just created
 var Game = require('./models/game');
 
-   module.exports = function(app) {
+module.exports = function(app) {
 
-       // server routes ===========================================================
-       // handle things like api calls
-       // authentication routes
+  // server routes ===========================================================
+  // handle things like api calls
+  // authentication routes
 
-       // sample api route
-       app.get('/api/game', function(req, res) {
-           // use mongoose to get all nerds in the database
-           Game.find(function(err, games) {
+  // sample api route
+  app.get('/api/game', function(req, res) {
+    Game.find(function(err, games) {
+      if (err)
+      res.send(err);
+      res.json(games);
+    });
+  });
 
-               // if there is an error retrieving, send the error.
-                               // nothing after res.send(err) will execute
-               if (err)
-                   res.send(err);
+  // route to handle creating goes here (app.post)
+  // route to handle delete goes here (app.delete)
 
-               res.json(games); // return all nerds in JSON format
-           });
-       });
-
-       // route to handle creating goes here (app.post)
-       // route to handle delete goes here (app.delete)
-
-       // frontend routes =========================================================
-   };
+  // frontend routes =========================================================
+  app.get('*', function(req,res){
+    res.sendFile('public/index.html', {root: __dirname});
+  });
+};
