@@ -11,7 +11,7 @@
         $stateProvider
             .state('games', {
               url: "/game",
-              templateUrl: "app/game/games.html"
+              templateUrl: "game/games.html"
           });
       }
 })();
