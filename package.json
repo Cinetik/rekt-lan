@@ -12,7 +12,8 @@
   "devDependencies": {
     "bower": "latest",
     "grunt": "latest",
-    "grunt-contrib-connect": "^0.10.1"
+    "grunt-contrib-connect": "^0.10.1",
+    "jshint": "^2.7.0"
   },
   "dependencies": {
     "body-parser": "^1.12.3",

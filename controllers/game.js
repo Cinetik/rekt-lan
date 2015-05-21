@@ -12,14 +12,14 @@ module.exports = function(app) {
         Game.find(function(err, games) {
             if (err)
             res.send(err);
-            res.json(games);
+            res.status(200).json(games);
         });
     })
     .get('/api/game/:id', function(req, res) {
         Game.findById(req.params.id, function(err, game) {
             if (err)
             res.send(err);
-            res.json(game);
+            res.status(200).json(game);
         });
     })
     .post('/api/game', function (req, res) {
@@ -27,19 +27,18 @@ module.exports = function(app) {
         game.save(function(err){
             if(err)
             res.send(err);
-            res.json(game);
+            res.status(200).json(game);
         });
     })
     .delete('/api/game/:id',function (req, res){
-        console.log(req);
-        var game = Game.findOneAndRemove(req.params.id, function(err){
-            if(err)
-            res.send(err);
-            res.json(req.params.id);
+        Game.findByIdAndRemove(req.params.id, {},
+            function(err, obj) {
+                if (err) next(err);
+                res.status(200).json(obj);
+            });
         });
-    });
 
 
-    // route to handle creating goes here (app.post)
-    // route to handle delete goes here (app.delete)
-};
+        // route to handle creating goes here (app.post)
+        // route to handle delete goes here (app.delete)
+    };
