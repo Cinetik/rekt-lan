@@ -15,4 +15,7 @@
             controller: 'GameController as vm',
         });
     }
+    //TODO Implement detail view and edit view
+    // https://angular-ui.github.io/ui-router/sample/#/contacts/1/item/a
+    // get fucking inspired please
 })();
