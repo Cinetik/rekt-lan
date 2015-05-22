@@ -9,6 +9,7 @@
 
     function gameService($http) {
         var service =  {
+            getGame: getGame,
             getGames: getGames,
             addGame: addGame,
             deleteGame: deleteGame
@@ -19,8 +20,8 @@
         *	possible.
         *	Also, we'll tweak a bit for popular games like CSGO, LoL, Dota, Hearthstone, ...
         */
-        function getGame() {
-            return $http.get('/api/game/' + game._id)
+        function getGame(gameId) {
+            return $http.get('/api/game/' + gameId)
             .then(function(response){
                 return response.data;
             })
