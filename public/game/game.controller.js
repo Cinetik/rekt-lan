@@ -5,9 +5,9 @@
     .module('rektlan.game')
     .controller('GameController', GameController);
 
-    GameController.$inject = ['gameService'];
+    GameController.$inject = ['gameService', '$state'];
 
-    function GameController(gameService) {
+    function GameController(gameService, $state) {
         var vm = this;
         vm.game = {};
         vm.errorMessage = {};
@@ -33,12 +33,16 @@
             return gameService.addGame(vm.game).then(function(result){
                 vm.games.push(result.data);
                 vm.game = {};
+                $state.go('detail', { gameId : result.data._id });
             });
         }
 
         function deleteGame(game){
             return gameService.deleteGame(game).then(function(result){
                 vm.games.splice(vm.games.indexOf(game),1);
+                if($state.is('detail',{gameId : game._id})){
+                    $state.go('games');
+                }
                 return result;
             });
         }

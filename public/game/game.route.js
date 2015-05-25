@@ -14,7 +14,13 @@
             templateUrl: 'game/games.html',
             controller: 'GameController as vm',
         })
-        .state('games.detail',{
+        .state('add',{
+            parent:'games',
+            url:'/add',
+            templateUrl: 'game/game-add.html',
+        })
+        .state('detail',{
+            parent: 'games',
             url: '/:gameId',
             templateUrl: 'game/game-detail.html',
             controller: 'GameDetailController as vm',
