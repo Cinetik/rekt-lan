@@ -3,6 +3,7 @@
 
     angular.module(
             'rektlan', [
+                'rektlan.home',
                 'rektlan.game',
                 'ngRoute',
                 'ngTouch',
