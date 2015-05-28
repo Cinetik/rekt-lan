@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-    .module('rektlan.game', ['ui.router'])
+    .module('rektlan.game')
     .config(config);
 
     config.$inject = ['$stateProvider','$urlRouterProvider'];
@@ -26,9 +26,12 @@
             controller: 'GameDetailController as vm',
         });
     }
-    //TODO Implement detail view and edit view
+    //TODO Implement edit view
     // https://angular-ui.github.io/ui-router/sample/#/contacts/1/item/a
     // get fucking inspired please
     // Edit: Let's have a game list as a view on the side, the middle content will be that game page with an edit button
+    // Edit 2: For the edit view, just use the detail view and explore
+    // the possibility of using a directive that transform elements
+    // into input when triggered
 
 })();

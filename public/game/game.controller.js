@@ -14,6 +14,8 @@
         vm.games = [];
         vm.addGame = addGame;
         vm.deleteGame = deleteGame;
+        vm.editionButton = 'Edit';
+        vm.toggleEdition = toggleEdition;
         activate();
 
         function activate() {
@@ -33,7 +35,7 @@
             return gameService.addGame(vm.game).then(function(result){
                 vm.games.push(result.data);
                 vm.game = {};
-                $state.go('detail', { gameId : result.data._id });
+                $state.go('detail', { gameName : result.data.game, gameId : result.data._id });
             });
         }
 
@@ -45,6 +47,10 @@
                 }
                 return result;
             });
+        }
+
+        function toggleEdition(){
+
         }
     }
 })();
