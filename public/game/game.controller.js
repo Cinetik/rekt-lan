@@ -5,23 +5,36 @@
     .module('rektlan.game')
     .controller('GameController', GameController);
 
-    GameController.$inject = ['gameService', '$state'];
+    GameController.$inject = ['gameService', '$state', '$stateParams'];
 
-    function GameController(gameService, $state) {
+    function GameController(gameService, $state, $stateParams) {
         var vm = this;
         vm.game = {};
         vm.errorMessage = {};
         vm.games = [];
         vm.addGame = addGame;
         vm.deleteGame = deleteGame;
+        vm.editGame = editGame;
         vm.editionButton = 'Edit';
-        vm.toggleEdition = toggleEdition;
+        vm.formFunction = formFunction;
         activate();
 
         function activate() {
-            return getGames().then(function() {
-                console.info('Activated Games View');
-            });
+            console.log($state.get());
+            if($state.is('edit')){
+                console.log('edit');
+                return gameService.getGame($stateParams.gameId).then(function(game){
+                    console.log(game);
+                    vm.game = game;
+                    console.info('edition View');
+                });
+            }
+            else{
+                console.log('view');
+                return getGames().then(function() {
+                    console.info('Activated Games View');
+                });
+            }
         }
 
         function getGames(){
@@ -49,8 +62,18 @@
             });
         }
 
-        function toggleEdition(){
+        function editGame(){
+            console.log(vm.game);
+            return gameService.saveGame(vm.game).then(function(result){
 
+            })
+        }
+
+        function formFunction(){
+            if($state.is('add')){
+                return vm.addGame();
+            }
+            return vm.editGame();
         }
     }
 })();

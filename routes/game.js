@@ -1,6 +1,6 @@
 // grab the nerd model we just created
 var Game = require( '../models/game');
-
+var _ = require('underscore');
 module.exports = function(app) {
 
     // server routes
@@ -36,7 +36,22 @@ module.exports = function(app) {
                 if (err) next(err);
                 res.status(200).json(obj);
             });
+        })
+    .put('/api/game/:id', function(req, res) {
+        Game.findById(req.params.id, function(err, game) {
+            if (err)
+            res.send(err);
+
+            game = _.extend(game, req.body);
+            console.log(game);
+            console.log(req.body);
+            game.save(function(err){
+                if(err)
+                res.send(err)
+                res.status(200).json(game);
+            });
         });
+    });
 
 
         // route to handle creating goes here (app.post)

@@ -19,6 +19,12 @@
             url:'/add',
             templateUrl: 'game/game-add.html',
         })
+        .state('edit',{
+            parent:'games',
+            url:'/edit/:gameId',
+            templateUrl: 'game/game-add.html',
+            controller: 'GameController as vm',
+        })
         .state('detail',{
             parent: 'games',
             url: '/:gameId',
