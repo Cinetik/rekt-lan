@@ -15,22 +15,18 @@
         vm.addGame = addGame;
         vm.deleteGame = deleteGame;
         vm.editGame = editGame;
-        vm.editionButton = 'Edit';
         vm.formFunction = formFunction;
         activate();
 
         function activate() {
             console.log($state.get());
             if($state.is('edit')){
-                console.log('edit');
                 return gameService.getGame($stateParams.gameId).then(function(game){
-                    console.log(game);
                     vm.game = game;
                     console.info('edition View');
                 });
             }
             else{
-                console.log('view');
                 return getGames().then(function() {
                     console.info('Activated Games View');
                 });
@@ -61,12 +57,9 @@
                 return result;
             });
         }
-
         function editGame(){
-            console.log(vm.game);
             return gameService.saveGame(vm.game).then(function(result){
-
-            })
+            });
         }
 
         function formFunction(){
