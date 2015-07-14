@@ -1,4 +1,4 @@
-# Rekt your LAN (Temporary name)
+# Rekt your LAN (Temporary name) [![Build Status](https://travis-ci.org/Cinetik/rekt-lan.svg?branch=master)](https://travis-ci.org/Cinetik/rekt-lan)
 
 Repository for the soon-to-be LAN Party best organizer !
 
