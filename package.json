@@ -11,9 +11,12 @@
   },
   "devDependencies": {
     "bower": "latest",
+    "chai": "^3.0.0",
     "grunt": "latest",
     "grunt-contrib-connect": "^0.10.1",
-    "jshint": "^2.7.0"
+    "jshint": "^2.7.0",
+    "karma": "^0.12.37",
+    "karma-chai": "^0.1.0"
   },
   "dependencies": {
     "body-parser": "^1.12.3",
