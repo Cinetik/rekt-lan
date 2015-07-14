@@ -16,7 +16,11 @@
     "grunt-contrib-connect": "^0.10.1",
     "jshint": "^2.7.0",
     "karma": "^0.12.37",
-    "karma-chai": "^0.1.0"
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "mocha": "^2.2.5",
+    "phantomjs": "^1.9.17"
   },
   "dependencies": {
     "body-parser": "^1.12.3",
@@ -24,5 +28,8 @@
     "method-override": "^2.3.3",
     "mongoose": "^4.0.2",
     "underscore": "^1.8.3"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/karma start"
   }
 }
