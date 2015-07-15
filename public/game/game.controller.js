@@ -44,7 +44,7 @@
             return gameService.addGame(vm.game).then(function(result){
                 vm.games.push(result.data);
                 vm.game = {};
-                $state.go('detail', { gameName : result.data.game, gameId : result.data._id });
+                //$state.go('detail', { gameName : result.data.game, gameId : result.data._id });
             });
         }
 
