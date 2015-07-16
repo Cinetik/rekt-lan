@@ -11,10 +11,19 @@ describe('game controller', function (){
     beforeEach(angular.mock.module('rektlan.game'));
     beforeEach(inject(function($rootScope, $controller, _$httpBackend_){
         $httpBackend = _$httpBackend_;
-        $httpBackend.whenGET('/api/game').respond([{"__v":0,"_id":"5563477b1eee42ac210ebc5d","name":"CSGO","description":"testeefqsef"}]);
-        scope = $rootScope.$new();
+        $httpBackend.whenGET('/api/game').respond([{
+            '__v':0,
+            '_id':'5563477b1eee42ac210ebc5d',
+            'name':'CSGO',
+            'description':'testeefqsef'
+        },{
+            '__v':0,
+            '_id':'5563477b1eee42ac210efsef',
+            'name':'DOTA2',
+            'description':'MOBA'
+        }]);
         createController = function() {
-            return $controller('GameController', {'$scope' : scope });
+            return $controller('GameController', {'$scope' : $rootScope.$new() });
         };
     }));
 
@@ -22,8 +31,7 @@ describe('game controller', function (){
         $httpBackend.expectGET('/api/game');
         var ctrl = createController();
         $httpBackend.flush();
-        expect(ctrl.games).to.have.length(1);
-
+        expect(ctrl.games).to.have.length(2);
     });
 
     it('should add a game to the list', function(){
@@ -32,7 +40,7 @@ describe('game controller', function (){
         ctrl.game = game;
         ctrl.addGame();
         $httpBackend.flush();
-        expect(ctrl.games).to.have.length(2);
+        expect(ctrl.games).to.have.length(3);
     });
 
     it('should remove a game from the list', function(){
@@ -41,6 +49,6 @@ describe('game controller', function (){
         ctrl.games.push(game);
         ctrl.deleteGame(game);
         $httpBackend.flush();
-        expect(ctrl.games).to.have.length(0);
+        expect(ctrl.games).to.have.length(1);
     });
 });

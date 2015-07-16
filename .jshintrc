@@ -53,6 +53,11 @@
 
     "browser": true,
     "node": true,
+    "mocha": true,
+    "jasmine": true,
+    "predef": [
+        "inject"
+    ],
 
     "globals": {
         "angular": false,

@@ -16,10 +16,10 @@
         vm.deleteGame = deleteGame;
         vm.editGame = editGame;
         vm.formFunction = formFunction;
+
         activate();
 
         function activate() {
-            console.log($state.get());
             if($state.is('edit')){
                 return gameService.getGame($stateParams.gameId).then(function(game){
                     vm.game = game;
@@ -44,7 +44,6 @@
             return gameService.addGame(vm.game).then(function(result){
                 vm.games.push(result.data);
                 vm.game = {};
-                //$state.go('detail', { gameName : result.data.game, gameId : result.data._id });
             });
         }
 
