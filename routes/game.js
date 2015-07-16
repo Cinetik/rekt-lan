@@ -2,12 +2,6 @@
 var Game = require( '../models/game');
 var _ = require('underscore');
 module.exports = function(app) {
-
-    // server routes
-    // handle things like api calls
-    // authentication routes
-
-    // sample api route
     app.get('/api/game', function(req, res) {
         Game.find(function(err, games) {
             if (err)
@@ -41,10 +35,7 @@ module.exports = function(app) {
         Game.findById(req.params.id, function(err, game) {
             if (err)
             res.send(err);
-
             game = _.extend(game, req.body);
-            console.log(game);
-            console.log(req.body);
             game.save(function(err){
                 if(err)
                 res.send(err)
@@ -52,8 +43,4 @@ module.exports = function(app) {
             });
         });
     });
-
-
-        // route to handle creating goes here (app.post)
-        // route to handle delete goes here (app.delete)
-    };
+};
