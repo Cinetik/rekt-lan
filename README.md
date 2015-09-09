@@ -35,7 +35,7 @@ node server.js
 
 ## Contribute
 
-If you wish to contribute, feel free to clone this repo.
+If you wish to contribute, feel free to clone this repo!
 
 However, I'll ask you to comply to guidelines established by John Papa (see [here](https://github.com/johnpapa/angular-styleguide)) for AngularJS specific development and AirBnb Style guide (see [here](https://github.com/airbnb/javascript)) for standard javascript.
 
