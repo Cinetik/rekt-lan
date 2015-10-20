@@ -18,7 +18,6 @@ After cloning this repo, run:
 
 ```
 npm install // Install every npm dependencies
-bower install // Install every bower dependencies
 ```
 
 Be sure mongod process is running on your environment.
